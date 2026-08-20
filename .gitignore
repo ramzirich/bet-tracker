@@ -1,0 +1,16 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+
+# Rider / VS
+.vs/
+.idea/
+
+# SQLite
+*.db
+*.db-shm
+*.db-wal

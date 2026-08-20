@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetTracker.Api", "BetTracker.Api\BetTracker.Api.csproj", "{1F7A1270-AF85-43E9-966D-4EC3EDD61F8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetTracker.Core", "BetTracker.Core\BetTracker.Core.csproj", "{D81444D4-7D60-48C9-9F0E-09902BBB4997}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetTracker.Infrastructure", "BetTracker.Infrastructure\BetTracker.Infrastructure.csproj", "{E8E89BA4-5B8D-4192-937E-C4FE1F83A3D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetTracker.Tests", "BetTracker.Tests\BetTracker.Tests.csproj", "{AC828EAD-0011-49E7-84B0-BB31A8557DBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F7A1270-AF85-43E9-966D-4EC3EDD61F8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F7A1270-AF85-43E9-966D-4EC3EDD61F8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F7A1270-AF85-43E9-966D-4EC3EDD61F8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F7A1270-AF85-43E9-966D-4EC3EDD61F8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D81444D4-7D60-48C9-9F0E-09902BBB4997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D81444D4-7D60-48C9-9F0E-09902BBB4997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D81444D4-7D60-48C9-9F0E-09902BBB4997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D81444D4-7D60-48C9-9F0E-09902BBB4997}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8E89BA4-5B8D-4192-937E-C4FE1F83A3D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8E89BA4-5B8D-4192-937E-C4FE1F83A3D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8E89BA4-5B8D-4192-937E-C4FE1F83A3D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8E89BA4-5B8D-4192-937E-C4FE1F83A3D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC828EAD-0011-49E7-84B0-BB31A8557DBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC828EAD-0011-49E7-84B0-BB31A8557DBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC828EAD-0011-49E7-84B0-BB31A8557DBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC828EAD-0011-49E7-84B0-BB31A8557DBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

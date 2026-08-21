@@ -4,7 +4,7 @@ Reference document for this repository. Read this before writing any code here.
 
 ## 1. What this is
 
-Personal sports-bet and casino-session tracker. ASP.NET Core 8 Web API, EF Core + SQLite (dev),
+Personal sports-bet and casino-session tracker. ASP.NET Core 8 Web API, EF Core + MySQL 8 (Pomelo provider),
 JWT auth with refresh tokens, BCrypt password hashing. Frontend is a Vite app on
 `http://localhost:5173` (CORS allowed origin).
 
@@ -29,7 +29,7 @@ Core -> nothing
 ```
 
 Core has zero dependencies on EF Core, ASP.NET Core or FluentValidation. That is what makes the
-domain rules unit-testable without a database and what makes the "switch SQLite -> PostgreSQL"
+domain rules unit-testable without a database and what makes the "switch MySQL -> PostgreSQL"
 change a single line in `Program.cs`.
 
 ## 3. Non-negotiable conventions
@@ -116,3 +116,22 @@ dotnet ef database update --project BetTracker.Infrastructure --startup-project 
 ```
 
 Swagger: `http://localhost:5000/swagger` (dev only).
+
+## 8. Database
+
+MySQL 8.0.46, local service `MySQL80` on `localhost:3306`. Provider: `Pomelo.EntityFrameworkCore.MySql`.
+
+- Schema `bettracker`, charset `utf8mb4`, collation `utf8mb4_0900_ai_ci`.
+- Application user `bettracker` — never connect as `root` from the app.
+- The connection string (with the password) lives in **user-secrets**, not in `appsettings*.json`.
+- `Database:Provider` in config selects the provider; the `switch` lives only in
+  `Infrastructure/DependencyInjection.cs`.
+- Server version is declared explicitly (`new MySqlServerVersion(new Version(8, 0, 46))`), not
+  `ServerVersion.AutoDetect`, so `dotnet ef` and CI never need a reachable database to build.
+- **Migrations are provider-specific.** Changing provider means deleting `Infrastructure/Migrations`
+  and regenerating, never hand-editing.
+- MySQL collation is case-insensitive by default, so email uniqueness and `search` `Contains`
+  filters are case-insensitive at the database level. Emails are still normalized to lowercase on
+  write so behaviour does not depend on the server's collation.
+- `decimal(18,2)` and `decimal(10,3)` are real types here (SQLite would have stored them as REAL),
+  so money arithmetic is exact.
